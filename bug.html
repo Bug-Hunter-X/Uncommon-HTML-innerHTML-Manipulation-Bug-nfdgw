@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrect way to access the div using innerHTML
+    document.getElementById("myDiv").innerHTML = document.getElementById("myDiv").innerHTML + "<p>This is a new paragraph.</p>";
+    //Correct way to add the paragraph
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = "This is a new paragraph.";
+    document.getElementById("myDiv").appendChild(newParagraph);
+  </script>
+</body>
+</html>
